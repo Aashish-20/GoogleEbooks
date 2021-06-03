@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.andmaroid.com/apk/res-auto"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:id="@+id/llRecyclerBookRow"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <ImageView
+            android:id="@+id/imgBook"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4">
+
+            <TextView
+                android:id="@+id/txtBookTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:textSize="17sp"
+                android:fontFamily="@font/dosis_medium"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:id="@+id/txtAuthor"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/txtBookTitle"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/dosis_medium"
+                android:text="xyxyxyxy"
+                android:textSize="17sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPrice"
+                android:layout_below="@+id/txtAuthor"
+                android:layout_marginTop="40dp"
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

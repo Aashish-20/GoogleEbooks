@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.andmaroid.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="10dp">
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnAddToFav"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="13sp"
+            android:text="add to favourites"
+            android:backgroundTint="@color/black"/>
+
+        <Button
+            android:textColor="@color/white"
+            android:id="@+id/btnRemoveFav"
+            android:layout_width="200dp"
+            android:textSize="13sp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4A0000"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:text="Remove Favourites" />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        app:layout_scrollFlags="scroll|enterAlways"
+        />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llRecyclerBookRow"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <ImageView
+                    android:id="@+id/imgBookDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:scaleType="centerCrop" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4">
+
+                    <TextView
+                        android:id="@+id/txtBookTitleDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/dosis_medium"
+                        android:text=""
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/txtAuthorDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtBookTitleDesc"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="40dp"
+                        android:fontFamily="@font/dosis_medium"
+                        android:text="xyxyxyxy"
+                        android:textSize="17sp" />
+                    <TextView
+                        android:id="@+id/txtPriceDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtAuthorDesc"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="40dp"
+                        android:textSize="25sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="200dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dosis_medium"
+                    android:text="@string/book_description"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:id="@+id/txtBookDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_note"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/dosis_medium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtNote"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/dosis_medium"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llNote"
+        android:weightSum="3">
+
+        <EditText
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Add your note about the book"
+            android:id="@+id/edtNote" />
+
+        <Button
+            android:id="@+id/btnMarkNote"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mark Note"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

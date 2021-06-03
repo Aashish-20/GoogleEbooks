@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenreActivity">
+
+
+    <TextView
+        android:id="@+id/or1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="98dp"
+        android:layout_centerHorizontal="true"
+        android:text="or Sign in to Get more Options"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buttonSize="wide"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explore_by_searching"
+        android:textSize="30sp"
+        android:clickable="true"
+        android:id="@+id/txtSearch"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:id="@+id/or"
+        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/txtSearch"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+        android:layout_below="@+id/or"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explore by these Genre's"
+        android:textSize="25sp"
+        android:id="@+id/text"
+        android:fontFamily="@font/dosis_medium"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <LinearLayout
+        android:layout_below="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+
+            android:id="@+id/btnHero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="heroes" />
+
+        <Button
+            android:id="@+id/btnProgramming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="programming" />
+
+        <Button
+            android:id="@+id/btnPython"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="python" />
+
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="history" />
+
+        <Button
+            android:id="@+id/btnSports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sport" />
+
+
+        <Button
+            android:id="@+id/btnEconomics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Economics" />
+
+        <Button
+            android:id="@+id/btnHorror"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="horror" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

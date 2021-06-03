@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="explore_by_searching"><u>Explore By Searching</u></string>
+    <string name="search_any_book">Search Any Book</string>
+    <string name="book_description"><u>Book Description:</u></string>
+    <string name="your_note"><u>Your Note</u></string>
+</resources>
