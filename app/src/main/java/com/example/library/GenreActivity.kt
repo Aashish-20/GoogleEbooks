@@ -1,12 +1,18 @@
 package com.example.library
 
+import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import com.example.library.connection.CheckConnection
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -57,7 +63,9 @@ class GenreActivity : AppCompatActivity() {
         btnHorror =findViewById(R.id.btnHorror)
         txtSearch = findViewById(R.id.txtSearch)
 
-        buttonClick()
+        if (CheckConnection().checkConnectivity(this)){
+            buttonClick()
+
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -70,9 +78,25 @@ class GenreActivity : AppCompatActivity() {
             val signInIntent = client.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
+        }else{
+            val dialog = AlertDialog.Builder(this)
+            dialog.setTitle("Error")
+            dialog.setMessage("Internet Connection not Found")
+            dialog.setCancelable(false)
+            dialog.setPositiveButton("Open Settings"){text , listener ->
+                //opening settings to make the connection available
+                val settingsIntent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
+                startActivity(settingsIntent)
+                finish()
 
-
-
+            }
+            dialog.setNegativeButton("Exit"){text,listener ->
+                //exiting the app
+                ActivityCompat.finishAffinity(this)
+            }
+            dialog.create()
+            dialog.show()
+        }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
